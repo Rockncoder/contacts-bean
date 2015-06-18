@@ -1,4 +1,7 @@
 <h2>{{message}}</h2>
 
-
-<p>first name last name</p>
+<p ng-repeat="item in list">
+  <a ng-href="#/edit-contact/{{item.id}}">
+    {{item.firstName}} {{item.lastName}}
+  </a>
+</p>

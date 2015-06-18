@@ -17,6 +17,10 @@
           templateUrl: 'views/contact.html',
           controller: 'ContactController'
         })
+        .when('/edit-contact/:id', {
+          templateUrl: 'views/edit-contact.html',
+          controller: 'EditContactController'
+        })
         .otherwise({
           redirectTo: '/'
         });
