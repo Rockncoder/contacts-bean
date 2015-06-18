@@ -8,7 +8,6 @@
 
       ContactService.getContacts().then(function(data){
         $scope.list = data.data;
-        debugger;
       });
     }]);
 }());
