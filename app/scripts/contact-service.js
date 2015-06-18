@@ -59,6 +59,7 @@
           wantAll = !id;
         if (wantAll) {
           angular.forEach(contacts, function (item, index) {
+            item.id = index;
             this.push(item);
           }, contactArray)
           return contactArray;
