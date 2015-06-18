@@ -3,6 +3,7 @@
 
   angular.module('contactsApp')
     .controller('EditContactController', ['$scope','$routeParams', 'ContactService', function($scope, $routeParams, ContactService){
+      // {}
       var id = $routeParams.id;
       var isNew = !id;
 
