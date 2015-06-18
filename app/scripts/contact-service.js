@@ -48,11 +48,9 @@
 
 
       function findContact(id) {
-        angular.forEach(contacts, function (key, value) {
-          if (key === id) {
-            return value;
-          }
-        });
+        if(contacts[id]){
+          return contacts[id];
+        }
         return null;
       }
 

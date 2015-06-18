@@ -6,6 +6,5 @@
       $scope.message = 'Hello contact list';
 
       var bob = ContactService.getContacts();
-      debugger;
     }]);
 }());
