@@ -16,7 +16,9 @@ describe('Contact List Controller', function () {
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(scope.awesomeThings.length).toEqual(3);
+  it('should attach contact list to scope', function () {
+    expect(scope.list).toBeDefined();
+    expect(typeof scope.list.length <= 4).toBeTruthy();
+
   });
 });
