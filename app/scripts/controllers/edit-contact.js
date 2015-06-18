@@ -4,7 +4,11 @@
   angular.module('contactsApp')
     .controller('EditContactController', ['$scope','$routeParams', 'ContactService', function($scope, $routeParams, ContactService){
       var id = $routeParams.id;
+      var isNew = !id;
 
-      $scope.currentContact = ContactService.getContacts(id);
+      console.log("Is it new?" + isNew);
+
+      $scope.title = isNew? "Add": "Edit";
+      $scope.currentContact = isNew? {}: ContactService.getContacts(id);
     }]);
 }());
