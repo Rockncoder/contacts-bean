@@ -14,6 +14,8 @@
       }else {
         ContactService.getContacts(id).then(function(data){
           $scope.currentContact = data.data;
+        }, function(err) {
+          console.log("error: "+JSON.stringify(err));
         });
       }
     }]);
