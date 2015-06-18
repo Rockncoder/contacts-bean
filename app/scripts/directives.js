@@ -8,7 +8,6 @@
         template: '<div>Hello</div>',
         replace: false,
         link: function (scope, element, attrs) {
-          debugger;
         }
       };
     }])
@@ -25,4 +24,12 @@
         }
       };
     }])
+    .directive('slider', [function () {
+      return {
+        restrict: 'EA',
+        replace: true,
+        link: function (scope, element, attrs) {
+        }
+      };
+    }]);
 }());
