@@ -3,6 +3,7 @@
 
   angular.module('contactsApp')
     .service('ContactService', ['$http', function ($http) {
+      var url = "http://tekadept.com/api/contacts";
       var contacts = {
         "1": {firstName: "Abel", lastName: "Able", telephone: "7141112222", email: "aable@gmail.com", createdAt: ""},
         "2": {
@@ -55,24 +56,28 @@
       }
 
       function getContacts(id) {
-        var contactArray = [],
-          wantAll = !id;
-        if (wantAll) {
-          angular.forEach(contacts, function (item, index) {
-            item.id = index;
-            this.push(item);
-          }, contactArray)
-          return contactArray;
-        } else {
-          return findContact(id);
-        }
+          if(id){
+            return $http.get(url + '/' + id);
+          }
+          return $http.get(url);
+
+        //var contactArray = [],
+        //  wantAll = !id;
+        //if (wantAll) {
+        //  angular.forEach(contacts, function (item, index) {
+        //    item.id = index;
+        //    this.push(item);
+        //  }, contactArray)
+        //  return contactArray;
+        //} else {
+        //  return findContact(id);
+        //}
       }
 
       function postContact(contact) {
         if (find) {
 
         }
-
       }
 
       function putContact(id, contact) {

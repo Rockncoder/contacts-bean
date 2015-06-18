@@ -9,6 +9,12 @@
       console.log("Is it new?" + isNew);
 
       $scope.title = isNew? "Add": "Edit";
-      $scope.currentContact = isNew? {}: ContactService.getContacts(id);
+      if(isNew){
+        $scope.currentContact = {};
+      }else {
+        ContactService.getContacts(id).then(function(data){
+          $scope.currentContact = data.data;
+        });
+      }
     }]);
 }());
