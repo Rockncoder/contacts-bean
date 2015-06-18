@@ -2,7 +2,10 @@
   'use strict';
 
   angular.module('contactsApp')
-    .controller('ContactListController',['$scope', function($scope){
+    .controller('ContactListController',['ContactService', '$scope', function(ContactService, $scope){
       $scope.message = 'Hello contact list';
+
+      var bob = ContactService.getContacts();
+      debugger;
     }]);
 }());
